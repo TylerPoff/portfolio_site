@@ -1,12 +1,17 @@
-export default function Skills() {
-    const skills = ["Python", "Django", "React", "Tailwind CSS", "Git", "APIs", "PostgreSQL"];
+import React from "react";
+
+function Skills() {
+    const skills = ["Python", "Flask", "React", "Tailwind CSS", "Git", "APIs", "PostgreSQL"];
 
     return (
-        <section className="mb-10">
-            <h2 className="text-2xl font-semibold mb-2">Skills</h2>
-            <ul className="flex flex-wrap gap-2">
-                {skills.map((skill, i) => (
-                    <li key={i} className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
+        <section className="my-16">
+            <h2 className="text-2xl font-bold mb-4">Skills</h2>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 justify-items-center">
+                {skills.map(skill => (
+                    <li
+                        key={skill}
+                        className="bg-gray-800 text-gray-100 px-4 py-2 rounded-full text-sm"
+                    >
                         {skill}
                     </li>
                 ))}
@@ -14,3 +19,5 @@ export default function Skills() {
         </section>
     );
 }
+
+export default Skills;
